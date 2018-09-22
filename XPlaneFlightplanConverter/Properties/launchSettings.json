@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PlnToFms": {
+      "commandName": "Project",
+      "commandLineArgs": ".\\TestData\\EDSB.fpl .\\TestData\\EDSB.fms"
+    }
+  }
+}
