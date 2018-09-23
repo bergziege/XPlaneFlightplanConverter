@@ -6,6 +6,7 @@ using De.BerndNet2000.XPlaneFlightplanConverter.Core.Domain.Fms;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Domain.GarminFpl;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Domain.GarminFpl.Converter;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Domain.GarminFpl.Converter.Impl;
+using De.BerndNet2000.XPlaneFlightplanConverter.Core.Infrastructure;
 
 namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Service.Impl
 {
@@ -15,7 +16,7 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Service.Impl
 
         public GarminFplToFmsService(IFplToFmsWaypointTypeConverter fplToFmsWaypointTypeConverter)
         {
-            _fplToFmsWaypointTypeConverter = fplToFmsWaypointTypeConverter;
+            _fplToFmsWaypointTypeConverter = fplToFmsWaypointTypeConverter.MustNotBeNull(nameof(fplToFmsWaypointTypeConverter));
         }
 
         public FmsFlightplan CreateFmsFlightplanFromGarminFpl(GarminFpl garminFlightplan)

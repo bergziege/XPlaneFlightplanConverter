@@ -5,8 +5,4 @@
     <RootNamespace>De.BerndNet2000.XPlaneFlightplanConverter.Core</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Infrastructure\" />
-  </ItemGroup>
-
 </Project>

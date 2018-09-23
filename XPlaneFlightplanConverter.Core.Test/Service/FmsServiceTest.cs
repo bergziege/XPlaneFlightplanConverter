@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Domain.Fms;
@@ -38,6 +39,13 @@ namespace XPlaneFlightplanConverter.Core.Test.Service
             lines[3].Should().Be("1");
             lines[4].Should().Be("1 EDDC 0 51.134344 13.768");
             lines[5].Should().Be("28 +51.378_+013.115 0 51.378353 13.115295");
+        }
+
+        [TestMethod]
+        public void Create_intance_with_null_should_throw_exception()
+        {
+            Action createInstanceWithNullParameter = ()=> new FmsService(null);
+            createInstanceWithNullParameter.Should().Throw<ArgumentNullException>().WithMessage("Value cannot be null.\nParameter name: textFileWriter");
         }
     }
 }

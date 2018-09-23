@@ -1,6 +1,7 @@
 ﻿using System.IO;
 using System.Xml.Serialization;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Domain.GarminFpl;
+using De.BerndNet2000.XPlaneFlightplanConverter.Core.Infrastructure;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Wrapper;
 
 namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Persistence.Impl
@@ -9,6 +10,7 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Persistence.Impl
     {
         public XmlReader(IFileSystem fileSystem) : base(fileSystem)
         {
+            fileSystem.MustNotBeNull(nameof(fileSystem));
         }
 
 

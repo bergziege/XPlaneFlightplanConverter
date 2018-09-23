@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.IO;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Domain.Fms;
+using De.BerndNet2000.XPlaneFlightplanConverter.Core.Infrastructure;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Persistence;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Persistence.Impl;
 
@@ -13,7 +14,7 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Service.Impl
 
         public FmsService(ITextFileWriter textFileWriter)
         {
-            _textFileWriter = textFileWriter;
+            _textFileWriter = textFileWriter.MustNotBeNull(nameof(textFileWriter));
         }
 
         public void WriteFmsFlightplanToFile(FmsFlightplan fmsFlightplan, FileInfo fileInfo)

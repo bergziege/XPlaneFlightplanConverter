@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Domain.GarminFpl;
+using De.BerndNet2000.XPlaneFlightplanConverter.Core.Infrastructure;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Persistence;
 
 namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Service.Impl
@@ -10,7 +11,7 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Service.Impl
 
         public GarminFplService(IXmlReader<GarminFpl> xmlReader)
         {
-            _xmlReader = xmlReader;
+            _xmlReader = xmlReader.MustNotBeNull(nameof(xmlReader));
         }
 
         public GarminFpl GetFromXmlFile(FileInfo file)
