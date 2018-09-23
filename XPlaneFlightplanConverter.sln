@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPlaneFlightplanConverter",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPlaneFlightplanConverter.Core", "XPlaneFlightplanConverter.Core\XPlaneFlightplanConverter.Core.csproj", "{F49541E0-B8CF-4FBC-BC5C-822B71C77DCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPlaneFlightplanConverter.Core.Test", "XPlaneFlightplanConverter.Core.Test\XPlaneFlightplanConverter.Core.Test.csproj", "{698E4E52-3A04-4959-9939-880AC282EDC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XPlaneFlightplanConverter.Core.Test", "XPlaneFlightplanConverter.Core.Test\XPlaneFlightplanConverter.Core.Test.csproj", "{698E4E52-3A04-4959-9939-880AC282EDC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A9857411-BA79-47B2-BFA5-4380B100683B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
