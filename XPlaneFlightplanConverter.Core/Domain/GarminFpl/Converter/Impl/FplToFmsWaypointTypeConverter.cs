@@ -25,6 +25,8 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Domain.GarminFpl.Conver
                     return WaypointType.Vor;
                 case "INT":
                     return WaypointType.Fix;
+                case "USER WAYPOINT":
+                    return WaypointType.LatLon;
                 default:
                     throw new NotImplementedException();
             }

@@ -2,7 +2,7 @@
   "profiles": {
     "PlnToFms": {
       "commandName": "Project",
-      "commandLineArgs": ".\\TestData\\EDSB.fpl .\\TestData\\EDSB.fms"
+      "commandLineArgs": ".\\TestData\\EDDP.fpl .\\TestData\\EDDP.fms"
     }
   }
 }

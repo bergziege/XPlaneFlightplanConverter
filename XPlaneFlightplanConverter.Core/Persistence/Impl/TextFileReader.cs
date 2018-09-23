@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using De.BerndNet2000.XPlaneFlightplanConverter.Core.Infrastructure;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Wrapper;
 
 namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Persistence.Impl
@@ -9,7 +10,7 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Persistence.Impl
 
         public TextFileReader(IFileSystem fileSystem)
         {
-            _fileSystem = fileSystem;
+            _fileSystem = fileSystem.MustNotBeNull(nameof(fileSystem));
         }
 
         public string ReadAllText(FileInfo textFile)

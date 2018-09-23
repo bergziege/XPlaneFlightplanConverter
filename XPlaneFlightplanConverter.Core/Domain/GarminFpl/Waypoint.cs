@@ -12,9 +12,9 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Domain.GarminFpl
         [XmlElement(ElementName = "country-code", Namespace = "http://www8.garmin.com/xmlschemas/FlightPlan/v1")]
         public string Countrycode { get; set; }
         [XmlElement(ElementName = "lat", Namespace = "http://www8.garmin.com/xmlschemas/FlightPlan/v1")]
-        public string Lat { get; set; }
+        public double Lat { get; set; }
         [XmlElement(ElementName = "lon", Namespace = "http://www8.garmin.com/xmlschemas/FlightPlan/v1")]
-        public string Lon { get; set; }
+        public double Lon { get; set; }
         [XmlElement(ElementName = "comment", Namespace = "http://www8.garmin.com/xmlschemas/FlightPlan/v1")]
         public string Comment { get; set; }
     }

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flight-plan xmlns="http://www8.garmin.com/xmlschemas/FlightPlan/v1">
+  <created>2018-09-23T07:23:14Z</created>
+  <waypoint-table>
+    <waypoint>
+      <identifier>EDDC</identifier>
+      <type>AIRPORT</type>
+      <country-code>ED</country-code>
+      <lat>51.134344</lat>
+      <lon>13.768000</lon>
+      <comment />
+    </waypoint>
+    <waypoint>
+      <identifier>DRN</identifier>
+      <type>VOR</type>
+      <country-code>ED</country-code>
+      <lat>51.015547</lat>
+      <lon>13.598889</lon>
+      <comment />
+    </waypoint>
+    <waypoint>
+      <identifier>DC422</identifier>
+      <type>INT</type>
+      <country-code>ED</country-code>
+      <lat>51.065489</lat>
+      <lon>13.457303</lon>
+      <comment />
+    </waypoint>
+    <waypoint>
+      <identifier>FS</identifier>
+      <type>NDB</type>
+      <country-code>ED</country-code>
+      <lat>51.193011</lat>
+      <lon>13.850031</lon>
+      <comment />
+    </waypoint>
+    <waypoint>
+      <identifier>SV001</identifier>
+      <type>USER WAYPOINT</type>
+      <country-code />
+      <lat>51.378353</lat>
+      <lon>13.115295</lon>
+      <comment />
+    </waypoint>
+    <waypoint>
+      <identifier>EDDP</identifier>
+      <type>AIRPORT</type>
+      <country-code>ED</country-code>
+      <lat>51.423992</lat>
+      <lon>12.236383</lon>
+      <comment />
+    </waypoint>
+  </waypoint-table>
+  <route>
+    <route-name>EDDC EDDP</route-name>
+    <flight-plan-index>1</flight-plan-index>
+    <route-point>
+      <waypoint-identifier>EDDC</waypoint-identifier>
+      <waypoint-type>AIRPORT</waypoint-type>
+      <waypoint-country-code>ED</waypoint-country-code>
+    </route-point>
+    <route-point>
+      <waypoint-identifier>DRN</waypoint-identifier>
+      <waypoint-type>VOR</waypoint-type>
+      <waypoint-country-code>ED</waypoint-country-code>
+    </route-point>
+    <route-point>
+      <waypoint-identifier>DC422</waypoint-identifier>
+      <waypoint-type>INT</waypoint-type>
+      <waypoint-country-code>ED</waypoint-country-code>
+    </route-point>
+    <route-point>
+      <waypoint-identifier>FS</waypoint-identifier>
+      <waypoint-type>NDB</waypoint-type>
+      <waypoint-country-code>ED</waypoint-country-code>
+    </route-point>
+    <route-point>
+      <waypoint-identifier>SV001</waypoint-identifier>
+      <waypoint-type>USER WAYPOINT</waypoint-type>
+      <waypoint-country-code />
+    </route-point>
+    <route-point>
+      <waypoint-identifier>EDDP</waypoint-identifier>
+      <waypoint-type>AIRPORT</waypoint-type>
+      <waypoint-country-code>ED</waypoint-country-code>
+    </route-point>
+  </route>
+</flight-plan>
