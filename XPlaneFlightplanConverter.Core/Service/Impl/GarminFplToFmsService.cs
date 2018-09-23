@@ -27,8 +27,8 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Service.Impl
                 Waypoint waypointToRoutepoint = garminFlightplan.Waypointtable.Waypoint.Single(x =>
                     x.Identifier == routepoint.Waypointidentifier && x.Type == routepoint.Waypointtype &&
                     x.Countrycode == routepoint.Waypointcountrycode);
-                double lat = double.Parse(waypointToRoutepoint.Lat, CultureInfo.InvariantCulture);
-                double lon = double.Parse(waypointToRoutepoint.Lon, CultureInfo.InvariantCulture);
+                double lat = waypointToRoutepoint.Lat;
+                double lon = waypointToRoutepoint.Lon;
                 WaypointType waypointType = _fplToFmsWaypointTypeConverter.FplWaypointTypeToFms(waypointToRoutepoint.Type);
                 string id;
                 if (waypointType == WaypointType.LatLon)
@@ -40,7 +40,7 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Service.Impl
                     id = waypointToRoutepoint.Identifier;
                 }
                 planItems.Add(new PlanItem(
-                    waypointType.AsInt(),
+                    waypointType,
                     id,
                     0,
                     lat,

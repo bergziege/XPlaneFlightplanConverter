@@ -26,7 +26,7 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Service.Impl
 
             foreach (var fmsFlightplanPlanItem in fmsFlightplan.PlanItems)
                 fmsLines.Add(
-                    $"{fmsFlightplanPlanItem.Typ} {fmsFlightplanPlanItem.Id} {fmsFlightplanPlanItem.Altitude.ToString(CultureInfo.InvariantCulture)} {fmsFlightplanPlanItem.Latitude.ToString(CultureInfo.InvariantCulture)} {fmsFlightplanPlanItem.Longitude.ToString(CultureInfo.InvariantCulture)}");
+                    $"{fmsFlightplanPlanItem.Typ.AsInt()} {fmsFlightplanPlanItem.Id} {fmsFlightplanPlanItem.Altitude.ToString(CultureInfo.InvariantCulture)} {fmsFlightplanPlanItem.Latitude.ToString(CultureInfo.InvariantCulture)} {fmsFlightplanPlanItem.Longitude.ToString(CultureInfo.InvariantCulture)}");
 
             _textFileWriter.WriteAllLines(fileInfo, fmsLines);
         }

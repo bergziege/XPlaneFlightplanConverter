@@ -2,7 +2,7 @@
 {
     public class PlanItem
     {
-        public PlanItem(int typ, string id, double altitude, double latitude, double longitude)
+        public PlanItem(WaypointType typ, string id, double altitude, double latitude, double longitude)
         {
             Typ = typ;
             Id = id;
@@ -11,7 +11,7 @@
             Longitude = longitude;
         }
 
-        public int Typ { get; }
+        public WaypointType Typ { get; }
         public string Id { get;}
         public double Altitude { get; }
         public double Latitude { get; }
