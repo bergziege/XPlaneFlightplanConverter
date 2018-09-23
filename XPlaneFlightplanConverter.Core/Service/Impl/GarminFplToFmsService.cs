@@ -54,8 +54,8 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Service.Impl
 
         private string CreateIdentifierFromCoordinates(double lat, double lon)
         {
-            string latPrefix = lat < 0 ? "-": "+";
-            string lonPrefix = lon < 0 ? "-": "+";
+            string latPrefix = lat < 0 ? "": "+";
+            string lonPrefix = lon < 0 ? "": "+";
             string latPart = lat.ToString("00.000", CultureInfo.InvariantCulture);
             string lonPart = lon.ToString("000.000", CultureInfo.InvariantCulture);
 
