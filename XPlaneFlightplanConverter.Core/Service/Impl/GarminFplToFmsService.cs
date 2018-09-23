@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using De.BerndNet2000.XPlaneFlightplanConverter.Core.Domain.Fms;
@@ -23,14 +24,24 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Service.Impl
 
             foreach (var routepoint in garminFlightplan.Route.Routepoint)
             {
-                var waypointToRoutepoint = garminFlightplan.Waypointtable.Waypoint.Single(x =>
+                Waypoint waypointToRoutepoint = garminFlightplan.Waypointtable.Waypoint.Single(x =>
                     x.Identifier == routepoint.Waypointidentifier && x.Type == routepoint.Waypointtype &&
                     x.Countrycode == routepoint.Waypointcountrycode);
-                var lat = double.Parse(waypointToRoutepoint.Lat, CultureInfo.InvariantCulture);
-                var lon = double.Parse(waypointToRoutepoint.Lon, CultureInfo.InvariantCulture);
+                double lat = double.Parse(waypointToRoutepoint.Lat, CultureInfo.InvariantCulture);
+                double lon = double.Parse(waypointToRoutepoint.Lon, CultureInfo.InvariantCulture);
+                WaypointType waypointType = _fplToFmsWaypointTypeConverter.FplWaypointTypeToFms(waypointToRoutepoint.Type);
+                string id;
+                if (waypointType == WaypointType.LatLon)
+                {
+                    id = CreateIdentifierFromCoordinates(lat, lon);
+                }
+                else
+                {
+                    id = waypointToRoutepoint.Identifier;
+                }
                 planItems.Add(new PlanItem(
-                    _fplToFmsWaypointTypeConverter.FplWaypointTypeToFms(waypointToRoutepoint.Type).AsInt(),
-                    waypointToRoutepoint.Identifier,
+                    waypointType.AsInt(),
+                    id,
                     0,
                     lat,
                     lon)
@@ -39,6 +50,16 @@ namespace De.BerndNet2000.XPlaneFlightplanConverter.Core.Service.Impl
 
             Header header = new Header(planItems.Count - 1);
             return new FmsFlightplan(header, planItems);
+        }
+
+        private string CreateIdentifierFromCoordinates(double lat, double lon)
+        {
+            string latPrefix = lat < 0 ? "-": "+";
+            string lonPrefix = lon < 0 ? "-": "+";
+            string latPart = lat.ToString("00.000", CultureInfo.InvariantCulture);
+            string lonPart = lon.ToString("000.000", CultureInfo.InvariantCulture);
+
+            return $"{latPrefix}{latPart}_{lonPrefix}{lonPart}";
         }
     }
 }

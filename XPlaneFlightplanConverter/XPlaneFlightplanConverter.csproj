@@ -5,13 +5,18 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <AssemblyName>XPlaneFlightplanConverter</AssemblyName>
     <RootNamespace>De.BerndNet2000.XPlaneFlightplanConverter</RootNamespace>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="TestData\EDDP.fpl" />
     <None Remove="TestData\EDSB.fpl" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="TestData\EDDP.fpl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestData\EDSB.fpl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
