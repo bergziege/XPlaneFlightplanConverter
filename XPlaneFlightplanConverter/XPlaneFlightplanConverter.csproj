@@ -6,6 +6,8 @@
     <AssemblyName>XPlaneFlightplanConverter</AssemblyName>
     <RootNamespace>De.BerndNet2000.XPlaneFlightplanConverter</RootNamespace>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
